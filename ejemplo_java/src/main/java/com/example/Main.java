@@ -4,6 +4,9 @@ import java.util.Random;
 
 import java.util.Scanner;
 
+import main.java.com.example.ejercicios.Camper;
+import main.java.com.example.ejercicios.Factorial;
+import main.java.com.example.ejercicios.Trainer;
 import main.java.com.example.game.ahorcado.Ahorcado;
 
 public class Main {
@@ -122,7 +125,7 @@ public class Main {
     // }
     // }
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         // Scanner scan = new Scanner(System.in);
         // System.out.println("Ingrese el titulo del libro: ");
         // var titulo = scan.nextLine();
@@ -141,35 +144,85 @@ public class Main {
         // System.out.println("Anio de publicacion: " + anio);
         // System.out.println("Genero del libro: " + genero);
         // System.out.println("Numero de paginas: " + paginas);
-    Scanner scan = new Scanner(System.in);
-    boolean flag = true;
-    var ahorcado = new Ahorcado();
-
-    while (flag) {
-
-        System.out.println("""
-                                 ++++++++++++++  MENU  ++++++++++++++
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        boolean flag = true;
+        var ahoracado = new Ahorcado();
+        var factorial = new Factorial();
+        while (flag) {
+            System.out.println("""
+                    ++++++++++++++  MENU  ++++++++++++++
                             ** Ingrese la opcion deseada **
-                     1. Jugar al Ahoracado
+                    1. Jugar al Ahoracado
+                    2. Palabras Adivinadas
                     0. Salir
                     """);
             switch (scan.nextInt()) {
                 case 1:
-                  ahorcado.iniciar();
-                    ahorcado.ejecutar(scan);
+                ahoracado.iniciar("X");
+                    ahoracado.ejecutar(scan);
                     break;
+                case 2:
+                    System.out.println(ahoracado.palabrasAdivinadas);
+                    break;
+                case 3:
+                    //Administrativo
+                    //Trainer
+                    //Colabarador
+                    Camper camper = new Camper("Andrues","Perrea",16,
+                    "TI", "10051234512",
+                    "?","adrian@gmail.com","12345600");
+                    System.out.println(camper.telefono);
+                    /*camper.nombre = "Andrues";
+                    camper.apellido = "Perrea";
+                    camper.edad = 16;
+                    camper.tipoDocumento = "TI";
+                    camper.documento = "1005123456";
+                    camper.estratoSocial = -1;
+                    camper.genero = "?";
+                    camper.email = "andresitto_777@gmail.com";*/
+                    camper.telefono = "018000918080";
+                    System.out.println(camper.telefono);
+                    //camper.nivelIngles = 10;
+
+                    camper.dormir();
+                    camper.divertirse();
+
+                    camper.cambiarNombre("Poncio Zuleta");
+                    camper.reportar();
+                    camper.calificar();
+
+
+                    break;
+
+                case 4:
+                    Trainer trainer = new Trainer();
+                    trainer.nombre = "Adriaaaaann";
+                    trainer.apellido = "Nunez";
+                    /*trainer.edad = 27;
+                    trainer.tipoDocumento = "CC";
+                    trainer.documento = "1097101921";
+                    trainer.estratoSocial = 8;
+                    trainer.genero = "masculino";
+                    trainer.email = "adriannnnn00@gmail.com";
+                    trainer.telefono = "018000918080";
+                    trainer.skill = "Software";*/
+
+
+                    trainer.dormir();
+                    trainer.divertirse();
+                    trainer.eseniar();
+                    trainer.tomacafe();
+
                 case 0:
                     // Salir
                     flag = false;
-
-                    break;
-                default:
-                 System.out.println("Ingrese una opcion "+
-                    "valida......\nPresione Enter para continuar.");
-                    scan.nextLine();
-                    break;
             }
         }
-    }
+     }
+    
 }
-            
+ 
+
+                    
